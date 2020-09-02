@@ -70,7 +70,7 @@
             email: '',
             password: '',
           },
-          token: ''
+          token: '' 
         };
       },
       methods: {
@@ -82,8 +82,8 @@
             const expired = response.data.expired; //取得期限
 
             // token
-            document.cookie = `hexToken=${token}; expires=${new Date(expired * 1000)}; path=/`;
-            window.location = '/product.html';
+            document.cookie = `hexToken=${token}; expires=${new Date(expired * 1000)}; path=/`; //將token及expired存起來
+            window.location = '/product.html'; //轉視窗
             
           }).catch((error) => {
             console.log(error);
@@ -96,7 +96,7 @@
 
         getData() { //取得資料
 
-          this.token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+          this.token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*\=\s*([^;]*).*$)|^.*$/, "$1");//把token取出來
 
           console.log(this.token);
           axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`;//取得授權

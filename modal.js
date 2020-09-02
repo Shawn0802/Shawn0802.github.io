@@ -91,8 +91,8 @@ export default {
   },
   props: ['tempProduct', 'api'], //將外層的資料跟api資料傳進來
   methods: {
-    updateProduct() {
-      let url = `${this.api.path}${this.api.uuid}/admin/ec/product/${this.tempProduct.id}`;
+    updateProduct() {                                                                        //編輯step.2
+      let url = `${this.api.path}${this.api.uuid}/admin/ec/product/${this.tempProduct.id}`; //用更新資料的那支api,利用id去找temproduct的資料然後更新 
       axios.patch(url,this.tempProduct)
         .then(res=> {
           // console.log(res)

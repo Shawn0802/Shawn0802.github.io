@@ -15,7 +15,7 @@ export default { //匯出至all.js外層
   props: ['pages'],//使用props讓元件有資料且，由外而內
   methods: {
     updatePage(num) { //接收到分頁的值
-      this.$emit('update', num); //觸發外層事件，使頁面更動,由內而外
+      this.$emit('update', num); //觸發外層事件，將值帶出去
     },
   },
 };
